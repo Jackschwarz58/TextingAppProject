@@ -10,9 +10,8 @@ def send_message(recipient, message_text):
     message = client.messages \
         .create(
             body= message_text,
-            messaging_service_sid ='MGd36eca31a7f5b39044832032b917db63',
-            to= recipient,
-            status_callback='https://postb.in/1592252035200-6130564089398' # Test callback to postbin for review, REPLACE LATER
+            messaging_service_sid = config.TWILIO_SERVICE_SID,
+            to = recipient,
+            status_callback='https://postb.in/1592278750490-7459223824553' # Test callback to postbin for review, REPLACE LATER
         )
     print(message.sid) # Prints SID to confirm message sent
-
