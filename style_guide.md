@@ -22,11 +22,11 @@
 
 ## Command Line Output
 
-* All potential known issues/code faults/errors must be handled and printed out to console with a __red__ `ERROR:` prefix.
+* All potential known issues/code faults/errors must be handled and printed out to console with a __red__ `ERROR:` prefix.<br>
 ![Imgur](https://i.imgur.com/Jw2dW1H.jpg)
-* Notes are allowed when dealing with non-essential add-ons to command line output. This includes: CML ouput explanations, potential error points, reminders for checking external files/info, more info regarding error handling, or something that fits within this general description. All notes must be printed with a __yellow__ `NOTE:` prefix.
+* Notes are allowed when dealing with non-essential add-ons to command line output. This includes: CML ouput explanations, potential error points, reminders for checking external files/info, more info regarding error handling, or something that fits within this general description. All notes must be printed with a __yellow__ `NOTE:` prefix.<br>
 ![Imgur](https://i.imgur.com/b7fh3wr.jpg)
-* When printing out items like sucessful file reads, function completion, error avoidance, message callback confirms, or something that fits within this general description. All success messages must be printed with a __green__ `SUCCESS:` prefix.
+* When printing out items like sucessful file reads, function completion, error avoidance, message callback confirms, or something that fits within this general description. All success messages must be printed with a __green__ `SUCCESS:` prefix.<br>
 ![Imgur](https://i.imgur.com/nGRFKT2.jpg)
 
 ## General/Misc.
