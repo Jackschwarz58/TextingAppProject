@@ -32,6 +32,7 @@
 ## General/Misc.
 
 * Try to avoid long variable names and long function names, keep it simple
+* Put any and all file specific details in the config file. DO NOT put file names or auth keys outside of this file! All variables in config should be considered confidential and remain hidden.
 
 <br>
 
