@@ -1,30 +1,39 @@
-import json
-import config
-from termcolor import colored # To get colored terminal output
+from flask import Flask, request, redirect
+from twilio.twiml.messaging_response import MessagingResponse
+# from helper import load_user_list
+# from sender import send_message
 
-data = {}
+app = Flask(__name__)
 
-## Loads in the default users list and handles errors for the 2 known potential issues
-## Expected issues: No JSON File, Empty file or Non-JSON file
-def load_user_list():
-    try:
-        with open(config.DATA_FILEPATH) as users_file:
-            data = json.load(users_file)
-        print('')
-        print(colored('SUCCESS:', 'green'), config.DATA_FILEPATH, "sucessfully read and parsed")
-        print('')
-    except FileNotFoundError:
-        print('')
-        print(colored('ERROR:', 'red'), "No Data File Found: Expected JSON at source", config.DATA_FILEPATH)
-        print(colored('NOTE:', 'yellow'), "Please check and ensure you put your specified file at the correct file path.")
-        print('')
-        print("...Creating empty file and restarting function run...")
-        print('')
-        f = open(config.DATA_FILEPATH, 'w+')
-        load_user_list()
-    except ValueError:
-        print('')
-        print(colored('ERROR:', 'red'),'No JSON data found in file!')
-        print('')
 
-load_user_list()
+@app.route("/sms", methods=['POST'])
+def incoming_sms():
+    # Get the message the user sent our Twilio number
+    body = request.values.get('Body', None)
+    print(body)
+    print(str(request.data))
+
+    # Start our TwiML response
+    resp = MessagingResponse()
+
+    # Determine the right reply for this message
+    if body.lower() == 'yes':
+        msg = resp.message("Wow! You Replied Yes")
+    elif body.lower() == 'no':
+        msg = resp.message("Shit! You Replied No")
+    else:
+        msg = resp.message(
+            'You really don\'t like following directions huh? Try again smartass')
+
+    msg.media('https://i.imgur.com/FbIRYFr.png')
+
+    return str(resp)
+
+
+@ app.route("/")
+def home():
+    return "Flask is up and running!"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
