@@ -15,11 +15,11 @@ def send_message(recipient, message_text):
             body=message_text,
             messaging_service_sid=config.TWILIO_SERVICE_SID,
             to=recipient,
-            status_callback='https://postb.in/1592452643765-1927637152839'
+            status_callback=config.POSTBIN_TEST
             # Test callback to postbin for review, REPLACE LATER
         )
     print(message.sid)  # Prints SID to confirm message sent
 
 
-send_message('+14058085488',
+send_message('+140',
              'Hello! Please help me out and respond \'yes\' or \'no\'')
