@@ -4,3 +4,5 @@ __pycache__/
 .bash_profile
 initializeENV.txt
 data/
+ngrok
+.DS_Store
