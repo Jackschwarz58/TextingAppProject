@@ -41,7 +41,7 @@ stevedore==2.0.0
 tweepy==3.8.0
 twilio==6.42.0
 typed-ast==1.4.0
-urllib3==1.25.5
+urllib3==1.25.8
 virtualenv==20.0.23
 virtualenv-clone==0.5.4
 virtualenvwrapper==4.8.4
